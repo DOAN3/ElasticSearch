@@ -1,0 +1,36 @@
+[
+  {
+	"site": "http://hoalanhuyanh.com",
+	"path": "Shop-Hoa-Lan",
+	"num_page": 10,
+	"key_class": "product-item",
+	"data_element": {
+		"title": "div a",
+		"image": "img",
+		"price": "span",
+		"description": {
+          "key_class": "detail",
+          "data_element": "description",
+          "content": "p"
+        }
+	}
+  },
+  {
+    "site": "https://vietflower.vn/hoa-tuoi",
+	"path": "lan-ho-diep",
+	"num_page": 1,
+	"key_class": "product",
+	"data_element": {
+		"title": ".mg0 a",
+		"image": ".db img",
+		"price": ".price span",
+		"description": {
+          "key_class": "cm-7",
+          "data_element": "description",
+          "content":"p"
+        }
+	}
+  }
+]
+
+
