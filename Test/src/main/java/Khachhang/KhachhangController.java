@@ -34,7 +34,7 @@ public class KhachhangController {
 	}
 	
 	@GetMapping("/Khachhang/all")
-	public List<Khachhang> getStudents(){
+	public List<Khachhang> getKhachhang(){
 		 Iterator<Khachhang> iterator= repository.findAll().iterator();
 		 List<Khachhang> khachhang=new ArrayList<Khachhang>();
 		 while(iterator.hasNext()){
@@ -45,25 +45,25 @@ public class KhachhangController {
 	
 
 	@GetMapping("/Khachhang/{id}")
-	public Optional<Khachhang> getStudent(@PathVariable Integer id){
+	public Optional<Khachhang> getKhachhang(@PathVariable Integer id){
 		return repository.findById(id);
 	}
 	
 	
-	@PutMapping("/student/{id}")
-	   public Khachhang updateStudent(@PathVariable Integer id,@RequestBody Khachhang student){
-		   Optional<Khachhang> std= repository.findById(id);
-		   if(std.isPresent()){
-			   Khachhang s=std.get();
-			   s.setName(student.getName());
-		   return repository.save(s);
+	@PutMapping("/Khachhang/{id}")
+	   public Khachhang updateKhachhang(@PathVariable Integer id,@RequestBody Khachhang khachhang){
+		   Optional<Khachhang> cus= repository.findById(id);
+		   if(cus.isPresent()){
+			   Khachhang c=cus.get();
+			   c.setName(khachhang.getName());
+		   return repository.save(c);
 		   }
 		   else
 			   return null;
 	   }
 	
-	@DeleteMapping("/student/{id}")
-	   public String deleteStudent(@PathVariable Integer id){
+	@DeleteMapping("/Khachhang/{id}")
+	   public String deleteKhachhang(@PathVariable Integer id){
 		  repository.deleteById(id);
 		  return "Document Deleted";
 	   }
