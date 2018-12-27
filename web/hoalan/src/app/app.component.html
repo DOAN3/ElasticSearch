@@ -1,0 +1,76 @@
+<div class="menu">
+  <div class="menu-row">
+    <div class="menu-row-wrapper">
+      <a href="/" class="menu-logo">
+        <span class="menu-logo-graphic"></span>
+        <span class="menu-logo-text">CanTho Orchid</span>
+      </a>
+
+      <nav class="menu-nav">
+        <ul class="nav">
+          <li class="nav-items"><a href="#" class="items">Liên hệ</a></li>
+          <li class="nav-items"><a href="#" class="items">Giới Thiệu</a></li>
+        </ul>
+      </nav>
+
+      <a class="sign-up">Đăng Ký</a>
+    </div>
+  </div>
+
+  <div class="menu-row">
+    <div class="menu-banner">
+      <h1 class="menu-banner-header">Shop hoa lan CanTho Orchid</h1>
+      <p class="menu-banner-subheader">Chất lượng làm nên sự KHÁC BIỆT</p>
+      <div class="menu-banner-search">
+        <div class="search-box">
+          <input type="text" class="search-query" placeholder="Nhập tên hoa...">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hoalan-container">
+  <div class="container-content">
+    <div class="menu-row">
+      <div class="container-grid">
+        <div class="w3-row">
+          <div class="w3-col l3" style="padding-left: 14px; padding-right: 14px;">
+            <div class="left-menu">
+              <div class="left-menu-item">
+                <a href="#" class="left-menu-topic">Danh Muc</a>
+              </div>
+              <div *ngFor="let cats of cat" class="left-menu-list">
+                <a href="#" class="left-menu-list-link">{{cats.TheLoai}}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-col l9">
+            <h3>List Product</h3>
+            <div style="margin-top: 30px" class="w3-row-padding">
+              <div *ngFor="let products of product | paginate: {itemsPerPage: 18, currentPage: p}" class="w3-col l4 m6 s12 w3-margin-bottom">
+                <div class="w3-container">
+                  <div class="w3-display-container">
+                    <img style="width: 100%; height: 220px" src="{{products.Hinh}}">
+                    <p>{{products.Ten | slice:0:28}}{{products.Ten.length>30?'...':''}}</p>
+                    <p>Gia: {{products.Gia}}</p>
+                    <div class="w3-display-middle w3-display-hover">
+                      <button class="w3-button w3-blue">Mua</button>
+                    </div>
+                    <div class="w3-display-middle w3-display-hover">
+                      <button class="w3-button w3-blue">Mua</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w3-row-padding w3-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.menu{
+  width: 100%;
+  background: linear-gradient(to right, #00C4CC, #7D2AE8);
+}
+.menu-row{
+  display: flex;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-items: center;
+}
+.menu-logo{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  text-decoration: none;
+}
+.menu-logo-graphic{
+  width: 3.75em;
+  height: 3.75em;
+  background-image: url("https://static.canva.com/static/images/canva_logo_white.svg");
+}
